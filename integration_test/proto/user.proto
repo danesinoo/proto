@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package user;
+
+service UserSend { 
+	rpc Send(SendRequest) returns (Response);
+}
+
+message SendRequest {
+	string UserId = 1;
+	string API = 2;
+	string What = 3;
+	string Content = 4;
+}
+
+message Response {
+	bool ok = 1;
+	string message = 2;
+}

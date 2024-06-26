@@ -1,0 +1,19 @@
+{
+  "name": "Match",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Weav-App/Match.git",
+  "author": "danesinoo <carlorosso02@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@grpc/grpc-js": "^1.8.18",
+    "@grpc/proto-loader": "^0.7.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "grpc": "./proto/build.sh",
+    "build": "./proto1/build.sh",
+    "start": "ts-node src/index.ts"
+  }
+}

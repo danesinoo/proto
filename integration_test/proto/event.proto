@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package event;
+
+service Event {
+	rpc GetPartecipants(EventID) returns (Partecipants);
+}
+
+message EventID {
+	string id = 1;
+}
+
+message Partecipants {
+	repeated string partecipants = 1;
+}

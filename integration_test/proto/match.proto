@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package match;
+
+message UserID {
+	string ID = 1;
+}
+
+message EventID {
+	string ID = 1;
+}
+
+/*
+enum evaluation {
+	LIKE = 0;
+	NEUTRAL = 1; // default
+	DISLIKE = 2;
+}
+*/
+
+message AnswerRequest {
+	string user = 1;
+	string event = 2;
+	int32 answer = 3;
+	int32 eval = 4; // evaluation
+}
+
+message Response {
+	bool ok = 1;
+	string error_message = 2;
+}
+
+service Match {
+	// Start the match of an event
+	rpc MatchStart(EventID) returns (Response);
+
+	// Stop the match of an event
+	rpc MatchStop(EventID) returns (Response);
+
+	// Get the answer of the user
+	rpc MatchAnswer(AnswerRequest) returns (Response);
+}
